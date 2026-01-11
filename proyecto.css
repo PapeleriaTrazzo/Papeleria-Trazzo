@@ -1,0 +1,276 @@
+/* RESET GENERAL */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+nav {
+  background-color: #b0bec5;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* menú centrado */
+  padding: 0 1rem;
+  height: 70px;
+  position: relative;
+  z-index: 2000;
+  flex-wrap: wrap;
+}
+
+.logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  margin-right: 1rem;
+}
+
+/* MENU PRINCIPAL */
+.main-ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: 0.3s ease;
+  color: white;
+}
+
+li:hover {
+  background-color: #d3d3d3; /* gris claro al pasar cursor */
+  color: black;
+  border-radius: 5px;
+}
+
+/* SUBMENÚ */
+.develop {
+  position: relative;
+}
+
+.second-ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #c0c0c0;
+  border-radius: 8px;
+  min-width: 150px;
+  z-index: 100;
+}
+
+.develop:hover > .second-ul {
+  display: block;
+}
+
+.second-ul li {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #999;
+  background-color: #c0c0c0;
+}
+
+.second-ul li:hover {
+  background-color: #e3e3e3;
+}
+
+/* TERCER NIVEL */
+.front:hover > .third-ul {
+  display: block;
+}
+
+.third-ul {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #24252a;
+  border-radius: 8px;
+}
+
+.third-ul li {
+  padding: 0.5rem 1rem;
+  color: white;
+  border-bottom: 1px solid white;
+}
+
+/* BUSCADOR */
+.search-menu {
+  position: relative;
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  background: #ffffff;
+  padding: 0.5rem;
+  border-radius: 10px;
+  max-width: 100%;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: black; /* letras visibles */
+  background-color: white; /* fondo blanco */
+}
+
+.search-input::placeholder {
+  color: #555; /* placeholder visible */
+}
+
+.search-button {
+  background-color: #1976d2;
+  color: white; /* letras blancas */
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* SUGERENCIAS DEL BUSCADOR */
+#sugerencias {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white; /* fondo blanco */
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  list-style: none;
+  max-height: 180px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+#sugerencias li {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: black; /* letras negras */
+  background-color: white; /* fondo blanco */
+}
+
+#sugerencias li:hover {
+  background-color: #e3f2fd;
+}
+
+/* CATALOGO DE PRODUCTOS */
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.producto {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  text-align: center;
+}
+
+.producto img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border: 5px solid black; /* borde negro */
+  border-radius: 8px;
+}
+
+/* BOTONES Y TEXTOS */
+.precio {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+h1, h2 {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+}
+
+h2 {
+  color: #66ffff;
+}
+
+p {
+  color: blue;
+}
+
+/* MEDIA QUERIES PARA CELULARES */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .main-ul {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .search-menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .catalogo {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .producto img {
+    height: 150px;
+  }
+
+  .logo {
+    margin-bottom: 1rem;
+  }
+}
+
+
+
