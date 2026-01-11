@@ -7,7 +7,7 @@ const datos = [
   { nombre: "corrector en cinta BAIHANG BH-100K", url: "5.html" },
   { nombre: "Pegamento en barra con diseño de pato marca Tren Art", url: "6.html" },
   { nombre: "Tijera infantil segura DI313 con punta Roma", url: "7.html" },
-  { nombre: "Libteta generica de 100 hojas con pasta transparente", url: "8.html" }
+  { nombre: "Libreta generica de 100 hojas con pasta transparente", url: "8.html" }
 ];
 
 const input = document.getElementById("busqueda");
